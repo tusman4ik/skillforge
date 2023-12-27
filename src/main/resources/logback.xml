@@ -1,0 +1,43 @@
+<configuration>
+
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%clr([%d{HH:mm:ss.SSS}]){yellow} %clr([%-5level]){highlight} %clr(%msg){cyan}%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+    </appender>
+
+    <appender name="ALL_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>C:\Users\Oleg\Project\skillforge\src\main\resources\logs/all_logs</file>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>{%d{HH:mm:ss.SSS}&amp;&amp;&amp;%-5level&amp;&amp;&amp;
+                    %file&amp;&amp;&amp;%line&amp;&amp;&amp;%msg %ex}</pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <appender name="WARN_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>C:\Users\Oleg\Project\skillforge\src\main\resources\logs/warn_logs</file>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>{%d{HH:mm:ss.SSS}&amp;&amp;&amp;%-5level&amp;&amp;&amp;
+                    %file&amp;&amp;&amp;%line&amp;&amp;&amp;%msg %ex}</pattern>
+            </layout>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ALL_FILE" />
+        <appender-ref ref="WARN_FILE" />
+    </root>
+
+</configuration>
