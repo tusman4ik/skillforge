@@ -10,7 +10,6 @@ target/
 *.iml
 *.ipr
 
-### Custom ###
-src/main/resources/logs/*
+
 
  

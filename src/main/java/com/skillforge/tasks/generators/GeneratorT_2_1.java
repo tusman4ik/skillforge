@@ -1,8 +1,7 @@
-package com.skillforge.services.generators;
+package com.skillforge.tasks.generators;
 
-import com.skillforge.entities.ResourceStorage;
+import com.skillforge.tasks.ResourceStorage;
 import com.skillforge.entities.Task;
-import com.skillforge.enums.TaskType;
 import com.skillforge.utils.Generator;
 import com.skillforge.utils.huffman.HuffmanRandomFrequency;
 import org.javatuples.Pair;
